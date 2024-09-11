@@ -1,23 +1,16 @@
-#include <iostream>
-#include <vector>
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int,int> numMap;//{number, index}
+        int n = nums.size();
 
-using namespace std;
-
-vector<int> twoSum(vector<int>& nums, int target) {
-    int n = nums.size();
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            if (/* TODO */) {
-                // found pair
-                return {i, j};
+        for(int i=0;i<n;i++){
+            int search_target = target - nums[i];
+            if(numMap.count(search_target)){
+                return {numMap[search_target], i};
             }
+            numMap[nums[i]] = i;
         }
-    }   
-    return {};
-}
-
-int main() {
-    vector<int> v = {2,4,7,9,11,19};
-    vector<int> ans = twoSum(v, 15);
-    cout<< "The indices of the two numbers that add up to target: " << ans[0] << ", " << ans[1];
-}
+        return {};
+    }
+};
