@@ -20,4 +20,5 @@ int main() {
     vector<int> v = {2,4,7,9,11,19};
     vector<int> ans = twoSum(v, 15);
     cout<< "The indices of the two numbers that add up to target: " << ans[0] << ", " << ans[1];
+    
 }
